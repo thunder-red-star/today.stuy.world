@@ -5,7 +5,7 @@
 
 <script>
 
-import Bells from './components/Bells.vue'
+import Bells from './components/BellsContainer.vue'
 
 
 export default {

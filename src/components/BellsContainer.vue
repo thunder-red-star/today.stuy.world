@@ -25,9 +25,7 @@
 <script>
   import * as StuyUtils from 'stuyutils.js';
   export default {
-    components: {
-      Bells
-    },
+    name: 'BellsContainer',
     data () {
       return {
         currentClass: StuyUtils.getCurrentClass(new Date()),
