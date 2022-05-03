@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import * as StuyUtils from 'stuyutils.js';
+  import * as StuyUtils from './assets/js/stuyUtils.js';
   export default {
     name: 'BellsContainer',
     data () {
