@@ -7,6 +7,7 @@
 
 import Bells from './components/Bells.vue'
 
+
 export default {
   name: 'App',
   components: {
