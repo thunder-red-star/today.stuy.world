@@ -1,4 +1,4 @@
-# todaystuyworld
+# today.stuy.world
 
 ## Project setup
 ```
