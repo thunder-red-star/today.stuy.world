@@ -39,8 +39,8 @@
                 var timeSinceHeader = document.getElementById("time-since-header");
                 var timeUntilHeader = document.getElementById("time-until-header");
                 var currentPeriodName = document.getElementById("period-name-header");
-                var timeSincePeriod = findDifference(new Date(), new Date(data.currentClass.end));
-                var timeUntilPeriod = findDifference(new Date(data.currentClass.end), new Date());
+                var timeSincePeriod = findDifference(new Date(), new Date(new Date.getFullYear(), new Date.getMonth(), new Date.getDate(), new Date(data.currentClass.start).getHours(), new Date(data.currentClass.start).getMinutes(), 0));
+                var timeUntilPeriod = findDifference(new Date(new Date.getFullYear(), new Date.getMonth(), new Date.getDate(), new Date(data.currentClass.end).getHours(), new Date(data.currentClass.end).getMinutes(), 0), new Date());
                 var currentPeriodName = document.getElementById("period-name-header");
                 timeSinceHeader.innerHTML = timeSincePeriod;
                 timeUntilHeader.innerHTML = timeUntilPeriod;
