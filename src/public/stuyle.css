@@ -1,0 +1,24 @@
+/* General styles */
+
+/* Load DM Sans font from Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=DM+Sans);
+
+#bell-timing {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 1px #000;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-clear {
+  clear: both;
+}
