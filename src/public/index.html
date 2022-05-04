@@ -22,6 +22,7 @@
             </div>
         </div>
         <script src="/socket.io/socket.io.js"></script>
+     <script src="bellschedule.js"></script>
         <script>
             // Load socket.io
             var socket = io();
@@ -38,13 +39,14 @@
                 var timeSinceHeader = document.getElementById("time-since-header");
                 var timeUntilHeader = document.getElementById("time-until-header");
                 var currentPeriodName = document.getElementById("period-name-header");
-                var timeSincePeriod = data.currentClass.start
-                var timeUntilPeriod = data.currentClass.end;
+                var timeSincePeriod = findDifference(new Date(), data.currentClass.start);
+                var timeUntilPeriod = findDifference(data.currentClass.end, new Date());
                 var currentPeriodName = document.getElementById("period-name-header");
                 timeSinceHeader.innerHTML = timeSincePeriod;
                 timeUntilHeader.innerHTML = timeUntilPeriod;
             });
         </script>
+
         <script src="water.js"></script>
     </body>
 </html>
