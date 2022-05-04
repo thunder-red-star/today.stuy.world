@@ -39,12 +39,10 @@
                 var timeSinceHeader = document.getElementById("time-since-header");
                 var timeUntilHeader = document.getElementById("time-until-header");
                 var currentPeriodName = document.getElementById("period-name-header");
-                console.log(new Date(data.currentClass.start))
-                var timeSincePeriod = findDifference(new Date(), new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDay(), new Date(data.currentClass.start).getHours(), new Date(data.currentClass.start).getMinutes(), 0));
-                var timeUntilPeriod = findDifference(new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDay(), new Date(data.currentClass.end).getHours(), new Date(data.currentClass.end).getMinutes(), 0), new Date());
+                // Make sure new dates are in UTC
                 var currentPeriodName = document.getElementById("period-name-header");
-                timeSinceHeader.innerHTML = timeSincePeriod;
-                timeUntilHeader.innerHTML = timeUntilPeriod;
+                timeSinceHeader.innerHTML = data.currentClassTimeSince;
+                timeUntilHeader.innerHTML = date.currentClassTimeUntil;
             });
         </script>
 
