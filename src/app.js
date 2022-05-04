@@ -38,3 +38,9 @@ setInterval(() => {
 		nextClass: StuyUtils.getNextClass(new Date()),
 	});
 }, 1000);
+
+module.exports = function (port) {
+	server.listen(port, () => {
+		console.log('Server listening on port ' + port);
+	});
+};
