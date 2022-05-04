@@ -39,7 +39,7 @@
                 var timeSinceHeader = document.getElementById("time-since-header");
                 var timeUntilHeader = document.getElementById("time-until-header");
                 var currentPeriodName = document.getElementById("period-name-header");
-                var timeSincePeriod = findDifference(new Date(), new Date(date.currentClass.end));
+                var timeSincePeriod = findDifference(new Date(), new Date(data.currentClass.end));
                 var timeUntilPeriod = findDifference(new Date(data.currentClass.end), new Date());
                 var currentPeriodName = document.getElementById("period-name-header");
                 timeSinceHeader.innerHTML = timeSincePeriod;
