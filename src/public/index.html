@@ -30,6 +30,15 @@
                 var currentTimeHeader = document.getElementById("current-time-header");
                 currentTimeHeader.innerHTML = currentTime.toLocaleTimeString();
             }, 1000);
+			// On receive heartbeat, update the time since period start and time until next period
+            socket.on("heartbeat", function(data) {
+                var timeSinceHeader = document.getElementById("time-since-header");
+                var timeUntilHeader = document.getElementById("time-until-header");
+                var timeSincePeriod = data.start;
+                var timeUntilPeriod = data.end;
+                timeSinceHeader.innerHTML = timeSincePeriod;
+                timeUntilHeader.innerHTML = timeUntilPeriod;
+            });
         </script>
     </body>
 </html>
