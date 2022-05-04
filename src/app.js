@@ -4,35 +4,37 @@ const express = require('express');
 const app = express();
 
 const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt');
+// const cors = require('cors');
+// const bcrypt = require('bcrypt');
+const http = require('http');
+const server = http.createServer(app);
+
 const socket = require('socket.io');
+const io = socket(server);
 
 const StuyUtils = require('stuyutils.js');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
-app.use(cookieParser());
-app.use(session({
-  secret: 'today.stuy.world',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-	maxAge: 1000 * 60 * 60 * 24 * 7,
-  },
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+io.on('connection', (socket) => {
+	console.log('a user connected');
+	socket.on('disconnect', () => {
+		console.log('user disconnected');
+	});
+	socket.on('heartbeat', () => {
+		console.log('heartbeat');
+	});
 });
 
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Every second, send a heartbeat to the client with the bell information
+setInterval(() => {
+	io.emit('heartbeat', {
+		currTime: new Date().getTime(),
+		currentClass: StuyUtils.getCurrentClass(new Date()),
+		nextClass: StuyUtils.getNextClass(new Date()),
+	});
+}, 1000);

@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Today</h1>
+        <!-- The website's main container will have a container storing the bell timing. The bell timing will contain three divs: the first at the top contains the current period name, the second one contains two sub-divs that hold the time since period start (float left) and time until next period (float right), and the third one contains the current time. -->
+        <div id="bell-timing">
+            <div id="current-period">
+                <h2 id="period-name-header">Period Name</h2>
+            </div>
+            <div id="time-since-period">
+                <h2 id="time-since-header">Time Since Period Start</h2>
+            </div>
+            <div id="time-until-next-period">
+                <h2 id="time-until-header">Time Until Next Period</h2>
+            </div>
+            <div id="current-time">
+                <h2 id="current-time-header">Current Time</h2>
+            </div>
+        </div>
+        <script>
+            // Load socket.io
+            var socket = io();
+            // Get the bell timing div
+            var bellTiming = document.getElementById("bell-timing");
+			// Every second, update the current time in the current-time-header id
+            setInterval(function() {
+                var currentTime = new Date();
+                var currentTimeHeader = document.getElementById("current-time-header");
+                currentTimeHeader.innerHTML = currentTime.toLocaleTimeString();
+            }, 1000);
+        </script>
+    </body>
+</html>
