@@ -6,11 +6,8 @@ const app = express();
 const path = require('path');
 // const cors = require('cors');
 // const bcrypt = require('bcrypt');
-const http = require('http');
-const server = http.createServer(app);
-
-const socket = require('socket.io');
-const io = socket(server);
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 const StuyUtils = require('stuyutils.js');
 
