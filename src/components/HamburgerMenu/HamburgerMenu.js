@@ -14,8 +14,8 @@ export default class HamburgerMenu extends React.Component {
   }
 
   toggleMenu = () => {
-      $('.navbar-toggle, nav').click(function () {
-          $('.navbar-toggle').toggleClass('navbar-on');
+      $('.navbar-toggle').click(function () {
+          $('nav').toggleClass('navbar-on');
           $('nav').fadeToggle();
           $('nav').removeClass('nav-hide');
       });
@@ -37,9 +37,7 @@ export default class HamburgerMenu extends React.Component {
           <div className="bar3"></div>
         </div>
         <nav className="nav-hide">
-          <ul>
               {children}
-          </ul>
         </nav>
       </div>
     );
