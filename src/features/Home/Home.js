@@ -28,8 +28,8 @@ export default class Home extends React.Component {
                 </Sidebar>
                 <div>
                     <Routes>
-                        <Route exact path="/bells" component={Bells} />
-                        <Route exact path="/announcements" component={Announcements} />
+                        <Route path="/bells" component={Bells} />
+                        <Route path="/announcements" component={Announcements} />
                         <Route path="/links" component={Links} />
                         <Route path="/credits" component={Credits} />
                         <Route path="/settings" component={Settings} />
