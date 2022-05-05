@@ -10,7 +10,6 @@ export default class ButtonLink extends Button {
     this.state = {
       href: props.href
     };
-    // On click, run the handleClick function
     this.handleClick = this.handleClick.bind(this);
   }
 
