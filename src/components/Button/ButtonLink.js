@@ -10,17 +10,11 @@ export default class ButtonLink extends Button {
     this.state = {
       href: props.href
     };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  // On click, open the link in a new tab
-  handleClick(e) {
-    window.open(this.state.href, '_blank');
   }
 
   render() {
     return (
-      <Button {...this.state} onClick={this.handleClick(this)}>
+      <Button {...this.state} onClick={(e) => window.open(this.state.href, '_blank')}>
         {this.props.children}
       </Button>
     );
