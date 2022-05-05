@@ -57,7 +57,7 @@ export default class Button extends React.Component {
     return (
       <button
         className={buttonClassName}
-        onClick={this.onClick}
+        onClick={this.props.onClick}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         onMouseDown={this.handleMouseDown}
