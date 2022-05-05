@@ -27,11 +27,15 @@ export default class Home extends React.Component {
                     <SidebarLink to="/settings">Settings</SidebarLink>
                 </Sidebar>
                 <div>
-                    <Route exact path="/bells" component={Bells} />
-                    <Route exact path="/announcements" component={Announcements} />
-                    <Route path="/links" component={Links} />
-                    <Route path="/credits" component={Credits} />
-                    <Route path="/settings" component={Settings} />
+                    <BrowserRouter>
+                        <Routes>
+                            <Route exact path="/bells" component={Bells} />
+                            <Route exact path="/announcements" component={Announcements} />
+                            <Route path="/links" component={Links} />
+                            <Route path="/credits" component={Credits} />
+                            <Route path="/settings" component={Settings} />
+                        </Routes>
+                    </BrowserRouter>
                 </div>
             </HamburgerMenu>
         );
