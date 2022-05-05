@@ -35,7 +35,7 @@ export default class SidebarLink extends React.Component {
         }
       >
         <Link
-          to={this.props.href}
+          to={this.props.to}
           onClick={this.props.onClick}
           onMouseEnter={this.setActive}
           onMouseLeave={this.setInactive}
