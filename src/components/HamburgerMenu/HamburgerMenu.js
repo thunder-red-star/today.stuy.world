@@ -14,12 +14,19 @@ export default class HamburgerMenu extends React.Component {
   }
 
   toggleMenu = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+      $('.navbar-toggle, nav').click(function () {
+          $('.navbar-toggle').toggleClass('navbar-on');
+          $('nav').fadeToggle();
+          $('nav').removeClass('nav-hide');
+      });
   };
 
-  render() {
+  componentDidMount() {
+    this.toggleMenu();
+  }
+
+
+    render() {
     const { isOpen } = this.state;
     const { children } = this.props;
     return (
@@ -29,13 +36,6 @@ export default class HamburgerMenu extends React.Component {
           <div className="bar2"></div>
           <div className="bar3"></div>
         </div>
-        <script>
-            $('.navbar-toggle, nav').click(function () {
-                $('.navbar-toggle').toggleClass('navbar-on');
-                $('nav').fadeToggle();
-                $('nav').removeClass('nav-hide');
-            });
-        </script>
         <nav className="nav-hide">
           <ul>
               {children}
