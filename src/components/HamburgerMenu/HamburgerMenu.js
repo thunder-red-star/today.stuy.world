@@ -4,6 +4,9 @@
 
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
+import './HamburgerMenu.css';
+
+// Don't forget to load in the HamburgerMenu.css file
 
 export default class HamburgerMenu extends React.Component {
   constructor(props) {
@@ -23,16 +26,13 @@ export default class HamburgerMenu extends React.Component {
     const { isOpen } = this.state;
     const { children } = this.props;
     return (
+
       <div className="hamburger-menu">
-        <button
-          className="hamburger-menu__button"
-          onClick={this.toggleMenu}
-          type="button"
-        >
-          <span className="hamburger-menu__button-line" />
-          <span className="hamburger-menu__button-line" />
-          <span className="hamburger-menu__button-line" />
-        </button>
+        <div className="hamburger-menu-toggle" onClick={this.toggleMenu}>
+          <div className="hamburger-menu-toggle-line toggle-line-1" />
+          <div className="hamburger-menu-toggle-line toggle-line-2" />
+          <div className="hamburger-menu-toggle-line toggle-line-3" />
+        </div>
         <Sidebar isOpen={isOpen}>{children}</Sidebar>
       </div>
     );
