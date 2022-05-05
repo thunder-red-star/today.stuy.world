@@ -18,11 +18,11 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Landing />} />
           <Route path="/home" exact element={<Home />} />
-            <Route path="/bells" component={<Bells />} />
-            <Route path="/announcements" component={<Announcements />} />
-            <Route path="/links" component={<Links />} />
-            <Route path="/credits" component={<Credits />} />
-            <Route path="/settings" component={<Settings />} />
+            <Route path="/bells" exact element={<Bells />} />
+            <Route path="/announcements" exact element={<Announcements />} />
+            <Route path="/links" exact element={<Links />} />
+            <Route path="/credits" exact element={<Credits />} />
+            <Route path="/settings" exact element={<Settings />} />
         </Routes>
       </div>
     </BrowserRouter>
