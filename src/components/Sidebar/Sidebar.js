@@ -19,7 +19,7 @@ export default class Sidebar extends React.Component {
           </h3>
         </div>
         <div className="sidebar-links">
-          props.children
+            {this.props.children}
         </div>
       </div>
     );
