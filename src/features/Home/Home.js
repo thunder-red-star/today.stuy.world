@@ -27,7 +27,6 @@ export default class Home extends React.Component {
                     <SidebarLink to="/settings">Settings</SidebarLink>
                 </Sidebar>
                 <div>
-                    <BrowserRouter>
                         <Routes>
                             <Route exact path="/bells" component={Bells} />
                             <Route exact path="/announcements" component={Announcements} />
@@ -35,7 +34,6 @@ export default class Home extends React.Component {
                             <Route path="/credits" component={Credits} />
                             <Route path="/settings" component={Settings} />
                         </Routes>
-                    </BrowserRouter>
                 </div>
             </HamburgerMenu>
         );
