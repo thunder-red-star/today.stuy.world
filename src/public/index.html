@@ -41,8 +41,8 @@
                 var currentPeriodName = document.getElementById("period-name-header");
                 // Make sure new dates are in UTC
                 var currentPeriodName = document.getElementById("period-name-header");
-                timeSinceHeader.innerHTML = data.currentClassTimeSince;
-                timeUntilHeader.innerHTML = data.currentClassTimeUntil;
+                timeSinceHeader.innerHTML = msToMinutes(data.currentClassTimeSince);
+                timeUntilHeader.innerHTML = msToMinutes(data.currentClassTimeUntil);
             });
         </script>
 
