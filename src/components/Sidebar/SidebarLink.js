@@ -28,12 +28,6 @@ export default class SidebarLink extends React.Component {
   render() {
     return (
       <p className={this.state.isActive ? 'sidebar-link active' : 'sidebar-link'}>
-        className={
-          this.state.isActive
-            ? "sidebar-link active"
-            : "sidebar-link"
-        }
-      >
         <Link
           to={this.props.to}
           onClick={this.props.onClick}
