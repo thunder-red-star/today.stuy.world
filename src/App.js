@@ -1,18 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Main app, import main view and hamburger menu
 import Landing from './features/Landing/Landing';
 import Home from './features/Home/Home';
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
-        <Route exact path="/" component={Landing} />
-          <Route path="/home" component={Home} />
+        <Routes>
+          <Route path="/" exact component={Landing} />
+          <Route path="/home" exact component={Home} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
