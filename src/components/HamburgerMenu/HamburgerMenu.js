@@ -1,6 +1,7 @@
 // Hamburger menu, meant to contain a list of links <a>
 import React from 'react';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 import './HamburgerMenu.css';
 // Navigation contains a UL of LI elements with links inside, so when page is rendered, convert the array of links to a list of links
 
@@ -36,7 +37,7 @@ export default class HamburgerMenu extends React.Component {
             $('nav').removeClass('nav-hide');
           })});
         </script>
-        <nav className="nav-hide" id="underline">
+        <nav className="nav-hide">
           <ul>
             {children.map(link => (
               <li key={link.key}>
