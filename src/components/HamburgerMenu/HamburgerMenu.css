@@ -33,6 +33,13 @@ nav ul {
 
 nav ul li { list-style: none; }
 
+nav ul li Link {
+  font-family: "DM Sans";
+  font-size: 35pt;
+  color: inherit;
+  text-decoration: none;
+}
+
 nav ul li a {
   font-family: "DM Sans";
   font-size: 35pt;
