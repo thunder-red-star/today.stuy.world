@@ -14,10 +14,12 @@ export default class HamburgerMenu extends React.Component {
   }
 
   toggleMenu = () => {
-      $('.navbar-toggle').click(function () {
-          $('nav').toggleClass('navbar-on');
-          $('nav').fadeToggle();
-          $('nav').removeClass('nav-hide');
+      $(function () {
+          $('.navbar-toggle, nav').click(function () {
+              $('.navbar-toggle').toggleClass('navbar-on');
+              $('nav').fadeToggle();
+              $('nav').removeClass('nav-hide');
+          });
       });
   };
 
