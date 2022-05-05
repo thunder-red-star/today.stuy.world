@@ -1,7 +1,7 @@
 // Button link, on click, open the link in a new tab
 // Extends button found in ./Button.js
 import React from 'react';
-import { Button } from './Button.js';
+import Button from './Button.js';
 
 export default class ButtonLink extends Button {
   constructor(props) {
