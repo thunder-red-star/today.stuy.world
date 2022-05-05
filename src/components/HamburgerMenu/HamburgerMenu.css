@@ -1,64 +1,85 @@
-/* Hamburger Menu CSS */
+/* Stylesheet for the navbar on most if not all pages */
 
-/* The toggle div should contain three divs, one for each of the three lines of the hamburger menu. */
-.hamburger-menu {
-  display: none;
+nav,
+.navbar-toggle {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+nav {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  overflow: hidden;
-}
-
-.hamburger-menu-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-/* The menu div should be positioned in the center of the screen. */
-.sidebar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: rgba(231,76,60, 0.95);
   width: 100%;
   height: 100%;
   text-align: center;
+  display: table;
+  color: white;
 }
 
-/* When the menu is clicked, the middle line should fade out, and the other two lines rotate in to form a cross. */
-.hamburger-menu-toggle-line {
-  display: block;
-  width: 50px;
+.nav-hide { display: none; }
+
+nav ul {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 !important;
+}
+
+nav ul li { list-style: none; }
+
+nav ul li a {
+  font-family: "DM Sans";
+  font-size: 35pt;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav ul li p {
+  font-family: "DM Serif Display";
+  font-size: 50pt;
+  color: inherit;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.navbar-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 100%;
   height: 8px;
-  background-color: #888;
+  margin-bottom: 5px;
+  background-color: rgba(231,76,60, 0.95);
   transition: all 0.3s ease-in-out;
 }
 
-.toggle-line-1 {
-  opacity: 1;
-  transform: rotate(0deg);
-}
+.navbar-on .bar1,
+.navbar-on .bar2,
+.navbar-on .bar3 { background-color: white; }
 
-.toggle-line-2 {
-  opacity: 1;
+.navbar-on .bar1 {
+  transform-origin: 10% 40%;
   transform: rotate(45deg);
 }
 
-.toggle-line-3 {
-  opacity: 1;
+.navbar-on .bar3 {
+  transform-origin: 10% 40%;
   transform: rotate(-45deg);
 }
 
-/* When the menu is clicked again, the middle line should fade in, and the other two lines rotate out to form a hamburger. */
+.navbar-on .bar2 { background-color: transparent; }

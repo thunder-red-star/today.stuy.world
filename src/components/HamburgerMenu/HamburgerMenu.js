@@ -1,14 +1,8 @@
-// Hamburger menu component
-// On click, it toggles the state of the menu, and opens or closes it
-// A hamburger menu contains a Sidebar, which is a container for the menu items
-
+// Hamburger menu, meant to contain a list of links <a>
 import React from 'react';
-import Sidebar from '../Sidebar/Sidebar';
-import './HamburgerMenu.css';
 import $ from 'jquery';
-
-
-// Don't forget to load in the HamburgerMenu.css file
+import './HamburgerMenu.css';
+// Navigation contains a UL of LI elements with links inside, so when page is rendered, convert the array of links to a list of links
 
 export default class HamburgerMenu extends React.Component {
   constructor(props) {
@@ -28,21 +22,23 @@ export default class HamburgerMenu extends React.Component {
     const { isOpen } = this.state;
     const { children } = this.props;
     return (
-      <div className="hamburger-menu">
-        <div className="hamburger-menu-toggle" onClick={this.toggleMenu}>
-          <div className="hamburger-menu-toggle-line toggle-line-1" />
-          <div className="hamburger-menu-toggle-line toggle-line-2" />
-          <div className="hamburger-menu-toggle-line toggle-line-3" />
+      <div>
+        <div className="navbar-toggle">
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
         </div>
-        <Sidebar isOpen={isOpen}>{children}</Sidebar>
         <script>
           $(function () {
-          $('.hamburger-menu-toggle').click(function () {
-            $('.hamburger-menu-toggle').toggleClass('navbar-on');
-            $('.sidebar').fadeToggle();
-            $('.sidebar').removeClass('nav-hide');
+          $('.navbar-toggle, nav').click(function () {
+            $('.navbar-toggle').toggleClass('navbar-on');
+            $('nav').fadeToggle();
+            $('nav').removeClass('nav-hide');
           })});
         </script>
+        <nav className="nav-hide" id="underline">
+
+        </nav>
       </div>
     );
   }
