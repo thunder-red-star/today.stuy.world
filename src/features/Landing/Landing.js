@@ -19,8 +19,7 @@ export default class Landing extends React.Component {
           <ButtonLink
             className="button button-primary"
             href="https://github.com/thunder-red-star/today.stuy.world"
-            text="View on GitHub"
-          />
+          >View on GitHub</ButtonLink>
         </div>
       </div>
     );
