@@ -27,7 +27,7 @@ export default class SidebarLink extends React.Component {
 
   render() {
     return (
-      <li
+      <p className={this.state.isActive ? 'sidebar-link active' : 'sidebar-link'}>
         className={
           this.state.isActive
             ? "sidebar-link active"
@@ -42,7 +42,7 @@ export default class SidebarLink extends React.Component {
         >
           {this.props.children}
         </Link>
-      </li>
+      </p>
     );
   }
 }
