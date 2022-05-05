@@ -6,32 +6,32 @@ export default class Button extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHovered: false,
-      isPressed: false,
+      ishovered: false,
+      ispressed: false,
     };
   }
 
   handleMouseEnter = () => {
     this.setState({
-      isHovered: true,
+      ishovered: true,
     });
   };
 
   handleMouseLeave = () => {
     this.setState({
-      isHovered: false,
+      ishovered: false,
     });
   };
 
   handleMouseDown = () => {
     this.setState({
-      isPressed: true,
+      ispressed: true,
     });
   };
 
   handleMouseUp = () => {
     this.setState({
-      isPressed: false,
+      ispressed: false,
     });
   };
 
@@ -44,12 +44,12 @@ export default class Button extends React.Component {
       disabled,
       ...otherProps
     } = this.props;
-    const { isHovered, isPressed } = this.state;
+    const { ishovered, ispressed } = this.state;
     const buttonClassName = classNames(
       'button',
       {
-        'button--hovered': isHovered,
-        'button--pressed': isPressed,
+        'button--hovered': ishovered,
+        'button--pressed': ispressed,
         'button--disabled': disabled,
       },
       className
