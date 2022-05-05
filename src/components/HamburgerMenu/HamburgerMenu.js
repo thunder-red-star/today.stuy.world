@@ -39,13 +39,7 @@ export default class HamburgerMenu extends React.Component {
         </script>
         <nav className="nav-hide">
           <ul>
-            {children.map(link => (
-              <li key={link.key}>
-                <Link key={link.key} to={link.to}>
-                  {link.text}
-                </Link>
-              </li>
-            ))}
+              {children}
           </ul>
         </nav>
       </div>
