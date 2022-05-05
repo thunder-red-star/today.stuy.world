@@ -12,7 +12,6 @@ import SidebarLink from '../../components/Sidebar/SidebarLink';
 export default class Home extends React.Component {
     render() {
         return (
-            <div>
                 <HamburgerMenu>
                     <Sidebar>
                         <SidebarLink to="/bells">Bells</SidebarLink>
@@ -22,7 +21,6 @@ export default class Home extends React.Component {
                         <SidebarLink to="/settings">Settings</SidebarLink>
                     </Sidebar>
                 </HamburgerMenu>
-            </div>
         );
     }
 }
