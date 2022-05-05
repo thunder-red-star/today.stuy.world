@@ -12,6 +12,18 @@ const io = require('socket.io')(http);
 
 const StuyUtils = require('stuyutils.js');
 
+function convertEpochTimeToCurrentTime (epochTime) {
+  // "Epoch time" is a date with hours, minutes, and seconds, but otherwise the year, month, and day are all 0.
+  // "Current time" is a date with hours, minutes, seconds, and the year, month, and day are all set to the current date.
+  // This function converts an epoch time to a current time.
+  let currentTime = new Date();
+  let currentTimeYear = currentTime.getFullYear();
+  let currentTimeMonth = currentTime.getMonth();
+  let currentTimeDay = currentTime.getDate();
+
+  return new Date(currentTimeYear, currentTimeMonth, currentTimeDay, epochTime.getHours(), epochTime.getMinutes(), epochTime.getSeconds());
+}
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
@@ -35,8 +47,10 @@ setInterval(() => {
     io.emit('heartbeat', {
         currTime: new Date().getTime(),
         currentClassName: currentClass.name,
-        currentClassTimeSince: new Date() - new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), currentClass.start.getHours(), currentClass.start.getMinutes(), currentClass.start.getSeconds()),
-        currentClassTimeUntil: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), currentClass.end.getHours(), currentClass.end.getMinutes(), currentClass.end.getSeconds()) - new Date(),
+        // Convert the class start time to a current time, then subtract that time from the current time to get the time since the class started.
+        currentClassTimeSince: new Date().getTime() - convertEpochTimeToCurrentTime(currentClass.startTime).getTime(),
+        // Do the same for the end time but subtract in the opposite direction.
+        currentClassTimeUntil: convertEpochTimeToCurrentTime(currentClass.endTime).getTime() - new Date().getTime(),
     });
 }, 1000);
 
