@@ -15,7 +15,6 @@ export default class ButtonLink extends Button {
 
   // On click, open the link in a new tab
   handleClick(e) {
-    e.preventDefault();
     window.open(this.state.href, '_blank');
   }
 
