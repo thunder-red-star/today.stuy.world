@@ -7,12 +7,12 @@ export default class Navigation extends React.Component {
   render() {
     return (
         <HamburgerMenu>
-            <Link to="/home">Home</Link>
-            <Link to="/bells">Bells</Link>
-            <Link to="/announcements">About</Link>
-            <Link to="/links">Contact</Link>
-            <Link to="/credits">Login</Link>
-            <Link to="/settings">Settings</Link>
+            <Link key="home" to="/home">Home</Link>
+            <Link key="bells" to="/bells">Bells</Link>
+            <Link key="announcements" to="/announcements">Announcements</Link>
+            <Link key="links" to="/links">Contact</Link>
+            <Link key="credits" to="/credits">Login</Link>
+            <Link key="settings" to="/settings">Settings</Link>
         </HamburgerMenu>
     );
   }
