@@ -30,12 +30,11 @@ export default class HamburgerMenu extends React.Component {
           <div className="bar3"></div>
         </div>
         <script>
-          $(function () {
-          $('.navbar-toggle, nav').click(function () {
-            $('.navbar-toggle').toggleClass('navbar-on');
-            $('nav').fadeToggle();
-            $('nav').removeClass('nav-hide');
-          })});
+            $('.navbar-toggle, nav').click(function () {
+                $('.navbar-toggle').toggleClass('navbar-on');
+                $('nav').fadeToggle();
+                $('nav').removeClass('nav-hide');
+            });
         </script>
         <nav className="nav-hide">
           <ul>
