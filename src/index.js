@@ -30,8 +30,8 @@ app.get('/', (req, res) => {
 
 // Every second, send a heartbeat to the client with the bell information
 setInterval(() => {
-    let currentClass = StuyUtils.getCurrentClass();
-    let nextClass = StuyUtils.getNextClass();
+    let currentClass = StuyUtils.getCurrentClass(new Date());
+    let nextClass = StuyUtils.getNextClass(new Date());
     io.emit('heartbeat', {
         currTime: new Date().getTime(),
         currentClassName: currentClass.name,
