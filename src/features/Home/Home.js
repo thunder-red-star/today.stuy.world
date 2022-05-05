@@ -1,6 +1,5 @@
 // Landing page for the application
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navigation from '../../features/Navigation/Navigation';
 // Site specifications:
 // * There is a hamburger menu that opens the sidebar
@@ -11,7 +10,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <Navigation />
-                <h1>a
+                <h1>
                     Home
                 </h1>
                 <p>

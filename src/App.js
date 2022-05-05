@@ -1,4 +1,7 @@
-import './App.css';
+import './css/Main.css';
+import './css/Fonts.css';
+import './features/Theme/auto.css';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Main app, import main view and hamburger menu
