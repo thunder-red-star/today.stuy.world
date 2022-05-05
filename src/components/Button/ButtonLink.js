@@ -21,7 +21,7 @@ export default class ButtonLink extends Button {
 
   render() {
     return (
-      <Button {...this.state} onClick={this.handleClick()}>
+      <Button {...this.state} onClick={this.handleClick(this)}>
         {this.props.children}
       </Button>
     );
