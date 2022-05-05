@@ -37,9 +37,9 @@ export default class HamburgerMenu extends React.Component {
         <Sidebar isOpen={isOpen}>{children}</Sidebar>
         <script>
           $(function () {
-          $('.hamburger-menu-toggle, div').click(function () {
-            $('.navbar-toggle').toggleClass('navbar-on');
-            $('.sidebar, div').fadeToggle();
+          $('.hamburger-menu-toggle').click(function () {
+            $('.hamburger-menu-toggle').toggleClass('navbar-on');
+            $('.sidebar').fadeToggle();
             $('.sidebar').removeClass('nav-hide');
           })});
         </script>
