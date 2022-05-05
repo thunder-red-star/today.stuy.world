@@ -17,7 +17,6 @@ export default class Landing extends React.Component {
                         Please check back soon.
                     </p>
                     <ButtonLink
-                        onClick={() => this.handleClick()}
                         className="button button-primary"
                         href="https://github.com/thunder-red-star/today.stuy.world"
                     >View on GitHub</ButtonLink>
