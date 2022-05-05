@@ -20,6 +20,10 @@ export default class Landing extends React.Component {
                         className="button button-primary"
                         href="https://github.com/thunder-red-star/today.stuy.world"
                     >View on GitHub</ButtonLink>
+                    <ButtonLink
+                        className="button button-secondary"
+                        href="/home"
+                    >Go to App</ButtonLink>
                 </div>
             </div>
         );
