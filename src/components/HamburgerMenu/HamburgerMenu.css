@@ -1,80 +1,81 @@
 /* Stylesheet for the navbar on most if not all pages */
 
-nav,
-.navbar-toggle {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-nav {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  display: table;
-  transition: all 0.2s ease-in-out;
-  background-color: inherit;
-}
-
-nav:before {
-  opacity: 0.8;
-}
-
-.nav-hide {
-  height: 0;
-  top: -100%;
-transition: all 0.2s ease-in-out;
-}
-
-nav ul {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0 !important;
-  background-color: inherit;
-}
-
-nav ul li { list-style: none; }
-
-nav ul li Link {
-  font-family: "DM Sans";
-  font-size: 35pt;
-  color: inherit;
-  text-decoration: none;
-}
-
-nav ul li a {
-  font-family: "DM Sans";
-  font-size: 35pt;
-  color: inherit;
-  text-decoration: none;
-}
-
-nav ul li p {
-  font-family: "DM Serif Display";
-  font-size: 50pt;
-  color: inherit;
-  text-decoration: none;
-  margin: 15px;
-}
-
-.navbar-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
-  z-index: 20;
-  cursor: pointer;
-}
-
 @media (prefers-color-scheme: dark) {
+  nav,
+  .navbar-toggle {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  nav {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: table;
+    transition: all 0.2s ease-in-out;
+    background-color: #202b38;
+    opacity: 0.9;
+  }
+
+  nav:before {
+    opacity: 0.8;
+  }
+
+  .nav-hide {
+    height: 0;
+    top: -100%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  nav ul {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 !important;
+    background-color: inherit;
+  }
+
+  nav ul li { list-style: none; }
+
+  nav ul li Link {
+    font-family: "DM Sans";
+    font-size: 35pt;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  nav ul li a {
+    font-family: "DM Sans";
+    font-size: 35pt;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  nav ul li p {
+    font-family: "DM Serif Display";
+    font-size: 50pt;
+    color: inherit;
+    text-decoration: none;
+    margin: 15px;
+  }
+
+  .navbar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    z-index: 20;
+    cursor: pointer;
+  }
+
   .bar1,
   .bar2,
   .bar3 {
@@ -103,6 +104,81 @@ nav ul li p {
 }
 
 @media (prefers-color-scheme: light) {
+  nav,
+  .navbar-toggle {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  nav {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: table;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff;
+    opacity: 0.9;
+  }
+
+  nav:before {
+    opacity: 0.8;
+  }
+
+  .nav-hide {
+    height: 0;
+    top: -100%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  nav ul {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 !important;
+    background-color: inherit;
+  }
+
+  nav ul li { list-style: none; }
+
+  nav ul li Link {
+    font-family: "DM Sans";
+    font-size: 35pt;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  nav ul li a {
+    font-family: "DM Sans";
+    font-size: 35pt;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  nav ul li p {
+    font-family: "DM Serif Display";
+    font-size: 50pt;
+    color: inherit;
+    text-decoration: none;
+    margin: 15px;
+  }
+
+  .navbar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    z-index: 20;
+    cursor: pointer;
+  }
+
   .bar1,
   .bar2,
   .bar3 {
