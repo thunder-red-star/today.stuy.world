@@ -20,11 +20,11 @@ export default class Home extends React.Component {
         return (
             <HamburgerMenu>
                 <Sidebar>
-                    <SidebarLink to="/bells">Bells</SidebarLink>
-                    <SidebarLink to="/announcements">Announcements</SidebarLink>
-                    <SidebarLink to="/links">Links</SidebarLink>
-                    <SidebarLink to="/credits">Credits</SidebarLink>
-                    <SidebarLink to="/settings">Settings</SidebarLink>
+                    <SidebarLink to="/home/bells">Bells</SidebarLink>
+                    <SidebarLink to="/home/announcements">Announcements</SidebarLink>
+                    <SidebarLink to="/home/links">Links</SidebarLink>
+                    <SidebarLink to="/home/credits">Credits</SidebarLink>
+                    <SidebarLink to="/home/settings">Settings</SidebarLink>
                 </Sidebar>
                 <div>
                     <Routes>
