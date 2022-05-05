@@ -16,7 +16,6 @@ export default class Landing extends React.Component {
             The app is currently in development and is not yet ready for use.
             Please check back soon.
           </p>
-          <!-- A link to the app's GitHub repository -->
           <ButtonLink
             className="button button-primary"
             href="https://github.com/thunder-red-star/today.stuy.world"
