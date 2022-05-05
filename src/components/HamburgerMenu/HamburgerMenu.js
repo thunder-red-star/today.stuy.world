@@ -41,7 +41,7 @@ export default class HamburgerMenu extends React.Component {
           <ul>
             {children.map(link => (
               <li key={link.key}>
-                <Link key={link.key} href={link.href}>
+                <Link key={link.key} to={link.to}>
                   {link.text}
                 </Link>
               </li>
