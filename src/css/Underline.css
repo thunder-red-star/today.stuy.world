@@ -2,12 +2,12 @@
 
 #underline, a:hover{
     position: relative;
-    text-decoration: none;
+    text-decoration: none !important;
     color: inherit;
 }
 
 #underline a::before{
-    text-decoration: none;
+    text-decoration: none !important;
     content: '';
     position: absolute;
     bottom: 0;
@@ -21,7 +21,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     #underline a:hover::before{
-        text-decoration: none;
+        text-decoration: none !important;
         left: 0%;
         right: auto;
         width: 100%;
