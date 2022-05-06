@@ -1,7 +1,7 @@
 // Landing page for the application
 import React from 'react';
 import Navigation from '../../features/Navigation/Navigation';
-import ThemeSetter from "../Theme/ThemeSetter";
+import ThemeSet from "../Theme/ThemeSet";
 // Site specifications:
 // * There is a hamburger menu that opens the sidebar
 // * In the sidebar, you can click different links to display different views
@@ -11,7 +11,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <Navigation />
-                <ThemeSetter />
+                <ThemeSet />
                 <h1>
                     Home
                 </h1>

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Sun from "./Icons/Sun";
 import Moon from "./Icons/Moon";
 
-let ThemeSetter = (props) => {
+let ThemeButton = (props) => {
 	const [theme, setTheme] = useState(localStorage.getItem("theme"));
 	const [ stylePath, setStylePath ] = useState("./Themes/" + (theme == "light" ? "Light" : "Dark")  + ".css");
 
@@ -44,9 +44,9 @@ let ThemeSetter = (props) => {
 
 	return (
 		<button className="theme-button" onClick={() => handleButtonClick()}>
-			{theme === "light" ? <Sun /> : <Moon />}
+			<p className="theme-button-text">{theme === "light" ? <Sun /> : <Moon />}</p>
 		</button>
 	);
 }
 
-export default ThemeSetter;
+export default ThemeButton;

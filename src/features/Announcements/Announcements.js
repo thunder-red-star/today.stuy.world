@@ -1,14 +1,15 @@
 // Landing page for the application
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
-import ThemeSetter from "../Theme/ThemeSetter";
+import ThemeButton from "../Theme/ThemeButton";
+import ThemeSet from "../Theme/ThemeSet";
 
 export default class Announcements extends React.Component {
     render() {
         return (
             <div className="container">
                 <Navigation />
-                <ThemeSetter />
+                <ThemeSet />
                 <h1>Announcements</h1>
                 <p>
                     This is the announcements page.
