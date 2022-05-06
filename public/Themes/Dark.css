@@ -992,3 +992,11 @@ nav ul li p {
 .blue {
     color: #0099ff;
 }
+
+.big-time-since {
+    color: #70ff70
+}
+
+.big-time-till {
+    color: #ff7070
+}

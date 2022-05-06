@@ -21,3 +21,33 @@ html * {
   margin: 0;
   font-size: 150%;
 }
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+.float-clear {
+  clear: both;
+}
+
+.big-time-since,
+.big-time-till {
+  font-size: 400%;
+  font-weight: bold;
+}
+
+.small-time-since,
+.small-time-till {
+  font-size: 200%;
+}

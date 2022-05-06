@@ -45,7 +45,7 @@ export default class Bells extends React.Component {
                             <p className="blue" id="current-class-header">Loading...</p>
                         </div>
                         <div className="b-time-since-till-container">
-                            <div className="b-time-since">
+                            <div className="b-time-since float-left">
                                 <p className="big-time-since right-align" id="time-since">
                                     Loading...
                                 </p>
@@ -53,7 +53,7 @@ export default class Bells extends React.Component {
                                     Minutes since period start
                                 </p>
                             </div>
-                            <div className="b-time-till">
+                            <div className="b-time-till float-right">
                                 <p className="big-time-till left-align" id="time-till">
                                     Loading...
                                 </p>
@@ -62,7 +62,7 @@ export default class Bells extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <div className="b-progress-bar-container">
+                        <div className="b-progress-bar-container float-clear">
                             <ProgressBar></ProgressBar>
                         </div>
                         <div className="b-time-now" id="time-now">
