@@ -101,8 +101,19 @@ html * {
   }
 }
 
-.small-time-since,
-.small-time-till {
-  font-size: 200%;
-  margin: 0;
+@media (max-width: 767px) {
+  .small-time-since,
+  .small-time-till {
+    font-size: 200%;
+    margin: 0;
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .small-time-since,
+  .small-time-till {
+    font-size: 200%;
+    margin: 0;
+  }
 }
