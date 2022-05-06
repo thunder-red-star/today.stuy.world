@@ -934,6 +934,7 @@ nav ul li Link {
     font-size: 35pt;
     color: inherit;
     text-decoration: none;
+    color: white;
 }
 
 nav ul li a {
@@ -941,6 +942,7 @@ nav ul li a {
     font-size: 35pt;
     color: inherit;
     text-decoration: none;
+    color: white;
 }
 
 nav ul li p {
