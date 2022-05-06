@@ -9,7 +9,7 @@
 #underline a::before{
     text-decoration: none !important;
     content: '';
-    position: relative;
+    position: absolute;
     bottom: 0;
     right: 0;
     width: 0;
@@ -22,6 +22,7 @@
 @media (hover: hover) and (pointer: fine) {
     #underline a:hover::before{
         text-decoration: none !important;
+        position: absolute;
         left: 0%;
         right: auto;
         width: 100%;
