@@ -25,7 +25,7 @@ export default class Bells extends React.Component {
             // Get the progress bar
             let progBarPercentage1 = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             let progBarPercentage2 = /* Get time between start and end of current class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 1;
-            let progBarPercentage = progBarPercentage1 / progBarPercentage2;
+            let progBarPercentage = (1 + (progBarPercentage1 / progBarPercentage2)) * 100;
             console.log("Trying to update progress bar to " + progBarPercentage);
             document.getElementById("progress-bar-inner").style.width = progBarPercentage + "%";
         }, 1000);
