@@ -18,8 +18,8 @@ export default class BellPage extends React.Component {
         // For each bell, add a new row to the table
         for (let i = 0; i < Object.keys(bellSchedule).length; i++) {
             let bellName = Object.keys(bellSchedule)[i];
-            let startTime = bellSchedule[bellName][0];
-            let endTime = bellSchedule[bellName][1];
+            let startTime = bellSchedule[bellName]["start"];
+            let endTime = bellSchedule[bellName]["end"];
             // Add the row to the table
             document.getElementById("bellTableBody").innerHTML += `
                 <tr>
