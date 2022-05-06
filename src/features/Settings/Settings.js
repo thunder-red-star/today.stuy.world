@@ -6,7 +6,7 @@ import ThemeButton from "../Theme/ThemeButton";
 export default class Settings extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div className="container" id="underline">
                 <Navigation />
                 <h1>Settings</h1>
                 <p>

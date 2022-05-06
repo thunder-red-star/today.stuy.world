@@ -1,12 +1,12 @@
 /* Stylesheet for link underlining. */
 
-a, a:hover{
+#underlinea, a:hover{
     position: relative;
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
-a::before{
+#underline a::before{
     text-decoration: none;
     content: '';
     position: absolute;
@@ -16,7 +16,7 @@ a::before{
     height: 4px;
     color: inherit;
     background-color: currentColor;
-    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: width 0.5s cubic-bezier(0.25, 0.5, 0.75, 1);
 }
 
 @media (hover: hover) and (pointer: fine) {

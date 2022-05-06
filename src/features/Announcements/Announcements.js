@@ -7,7 +7,7 @@ import ThemeSet from "../Theme/ThemeSet";
 export default class Announcements extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div className="container" id="underline">
                 <Navigation />
                 <ThemeSet />
                 <h1>Announcements</h1>

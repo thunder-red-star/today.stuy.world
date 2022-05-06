@@ -6,7 +6,7 @@ import ThemeSet from "../Theme/ThemeSet";
 export default class Credits extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div className="container" id="underline">
                 <ThemeSet />
                 <Navigation />
                 <h1>Credits</h1>

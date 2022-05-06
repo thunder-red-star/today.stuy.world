@@ -28,7 +28,7 @@ export default class HamburgerMenu extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <div>
+      <div id="underline">
         <div className="navbar-toggle" id="navbar-toggle" onClick={this.toggleMenu}>
           <div className="bar1"/>
             <div className="bar2"/>
