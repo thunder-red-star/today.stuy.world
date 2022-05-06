@@ -25,8 +25,8 @@ export default class BellPage extends React.Component {
             document.getElementById("bellTableBody").innerHTML += `
                 <tr>
                     <td>${bellName}</td>
-                    <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "HH:mm A")}</td>
-                    <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "HH:mm A")}</td>
+                    <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "hh:mm A")}</td>
+                    <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "hh:mm A")}</td>
                 </tr>
             `;
         }

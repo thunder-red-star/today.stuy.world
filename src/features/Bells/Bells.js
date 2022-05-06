@@ -7,6 +7,7 @@ import ThemeSet from "../Theme/ThemeSet";
 import TimeUtils from "../../utils/TimeUtils";
 import DateTime from "../../utils/DaT";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import ButtonLink from "../../components/Button/ButtonLink";
 
 // For this page, we will update some parts of the class every second.
 export default class Bells extends React.Component {
@@ -99,6 +100,10 @@ export default class Bells extends React.Component {
                             Loading...
                         </div>
                     </div>
+                    <ButtonLink
+                        className="button button-primary"
+                        href="/schedule"
+                    >Today's full schedule</ButtonLink>
                 </center>
             </div>
         );
