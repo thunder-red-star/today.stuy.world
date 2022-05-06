@@ -25,7 +25,8 @@ export default class Bells extends React.Component {
             // Get the progress bar
             let progress = document.getElementById("progress-bar-inner");
             // Set width
-            progress.style.width = (TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301) / (TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start), TimeUtils.UTCify(new Date())) - 300) * 100 + "%";
+            progress.style.max = StuyUtils.getCurrentClass(new Date()).end - StuyUtils.getCurrentClass(new Date()).start;
+            progress.style.width = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start), TimeUtils.UTCify(new Date())) + 301;
         }, 1000);
     }
     componentWillUnmount() {
