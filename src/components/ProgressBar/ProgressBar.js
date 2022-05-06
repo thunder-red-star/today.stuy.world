@@ -28,7 +28,7 @@ export default class ProgressBar extends React.Component {
 		width: `${this.state.width}%`,
 		height: `${this.state.height}px`,
 	  }}>
-		<div id={}"progress-bar-inner" className="progress-bar-inner" style={{
+		<div id="progress-bar-inner" className="progress-bar-inner" style={{
 		  width: this.state.progress + '%',
 			height: `100%`,
 		}}></div>
