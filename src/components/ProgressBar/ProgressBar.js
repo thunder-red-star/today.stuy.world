@@ -32,6 +32,7 @@ export default class ProgressBar extends React.Component {
 		  width: this.state.progress + '%',
 			height: `100%`,
 			position: 'relative',
+			float: 'left',
 		}}></div>
 	  </div>
 	);
