@@ -1,6 +1,6 @@
 export default {
 	minutesBetween(start, end) {
-		return Math.floor((end - start) / 60000);
+		return Math.floor((start - end) / 60000);
 	},
 	epochToCurrent (epochTime) {
 		// "Epoch time" is a date with hours, minutes, and seconds, but otherwise the year, month, and day are all 0.
