@@ -315,7 +315,8 @@ let termDays = {};
 termDaysFile.split('\n').forEach(function(line) {
 	let [date, school, cycle, schedule, testing, events] = line.split('\t');
 	termDays[date] = Info(
-		school === "None" ? null : cycle,
+		school === "True" ? true : false,
+		cycle === "None" ? null : cycle,
 		schedule === "None" ? null : schedule,
 		testing === "None" ? null : testing,
 		events === "None" ? null : events
@@ -463,33 +464,13 @@ ptcBellsFileLines.forEach(function(line) {
 	ptcBells[cols[0]] = Time(DateTime.parse(cols[1], "h:mm A", true), DateTime.parse(cols[2].trim(), "h:mm A", true));
 });
 
-
-function twelveToTwentyFour(time) {
-	/**
-	 * Converts a time in the format HH:MM A to 24-hour format HH:mm:ss
-	 * @param time: string
-	 * @returns string
-	 */
-	let ampm = time.split(" ")[1];
-	let split = time.split(":");
-	let hour = parseInt(split[0]);
-	let minute = parseInt(split[1]);
-
-	if (ampm === "AM" && hour === 12) {
-		hour = 0;
-	}
-	if (ampm === "PM" && hour !== 12) {
-		hour += 12;
-	}
-	return (hour < 10 ? "0" + hour : hour) + ":" + (minute < 10 ? "0" + minute : minute) + ":00";
-}
-
 function getDayInfo (date) {
 	/**
 	 * Returns the info for a given date
 	 * @param date: Date
 	 * @returns Info
 	 */
+	console.log(DateTime.format(date, "YYYY-MM-DD"));
 	let dayInfo = termDays[DateTime.format(date, "YYYY-MM-DD")];
 
 	if (dayInfo === undefined) {
@@ -518,6 +499,7 @@ function getNextSchoolDay (date) {
 	}
 	let nextDay = DateTime.addDays(day, 1);
 	while (getDayInfo(nextDay).school === false) {
+		console.log(getDayInfo(nextDay));
 		if (getDayInfo(nextDay) === undefined) {
 			return undefined;
 		}
@@ -532,12 +514,7 @@ function getBellSchedule (date, thisDay = false) {
 	 * @param date: Date | string
 	 * @returns {[key: string]: Time}
 	 */
-	let day;
-	if (date instanceof String) {
-		day = DateTime.parse(date, "YYYY-MM-DD HH:mm:ss");
-	} else {
-		day = date;
-	}
+	let day = date;
 	let dayInfo = getDayInfo(day);
 	if (dayInfo === undefined) {
 		// Error with DayNotInData
@@ -557,6 +534,7 @@ function getBellSchedule (date, thisDay = false) {
 	} else {
 		// If thisDay is true, and there was no schedule found in the above if statements, return undefined
 		// Otherwise find the next school day and return the bell schedule for that day
+		console.log(thisDay);
 		if (thisDay) {
 			bellSchedule = undefined;
 		} else {
@@ -583,7 +561,7 @@ function getCurrentClass (date) {
 		// Error with DayNotInData
 		throw new Error("DayNotInData");
 	}
-	let bellSchedule = getBellSchedule(day);
+	let bellSchedule = getBellSchedule(day, true);
 	if (bellSchedule === undefined) {
 		return undefined;
 	}

@@ -11,8 +11,8 @@ import Links from "./features/Links/Links";
 import Credits from "./features/Credits/Credits";
 import Settings from "./features/Settings/Settings";
 
-import {useState} from "react";
-import {useEffect} from "react";
+import './css/Underline.css';
+import './css/Center.css';
 
 // Don't forget to call renderImportAttributes
 function App() {
