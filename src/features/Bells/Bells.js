@@ -59,16 +59,6 @@ export default class Bells extends React.Component {
                                     <p className="mini-blue" id="cycle-header">Loading...</p>
                                 </div>
                             </div>
-                            <div class="float-clear">
-                                <div className="b-testing">
-                                    <p className="section-header">Testing</p>
-                                    <p className="mini-blue" id="testing-header">Loading...</p>
-                                </div>
-                                <div className="b-events">
-                                    <p className="section-header">Events</p>
-                                    <p className="mini-blue" id="events-header">Loading...</p>
-                                </div>
-                            </div>
                         </div>
                         <div className="b-current-class float-clear">
                             <p className="section-header">Current Class</p>
