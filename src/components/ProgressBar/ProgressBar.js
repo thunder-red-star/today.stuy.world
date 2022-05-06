@@ -31,7 +31,7 @@ export default class ProgressBar extends React.Component {
 		<div id="progress-bar-inner" className="progress-bar-inner" style={{
 		  width: this.state.progress + '%',
 			height: `100%`,
-			position: 'absolute',
+			position: 'relative',
 		}}></div>
 	  </div>
 	);
