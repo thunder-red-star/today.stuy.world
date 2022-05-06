@@ -20,8 +20,6 @@ export default class Bells extends React.Component {
             // Update the bells
             document.getElementById("bell-schedule-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).schedule || "N/A";
             document.getElementById("cycle-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).cycle || "N/A";
-            document.getElementById("testing-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).testing || "None";
-            document.getElementById("events-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).events || "None";
             document.getElementById("current-class-header").innerHTML = StuyUtils.getCurrentClass(new Date()).period;
             document.getElementById("time-since").innerHTML = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301;
