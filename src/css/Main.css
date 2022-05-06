@@ -43,11 +43,13 @@ html * {
 
 .big-time-since,
 .big-time-till {
-  font-size: 400%;
+  font-size: 1000%;
   font-weight: bold;
+  margin: 0;
 }
 
 .small-time-since,
 .small-time-till {
   font-size: 200%;
+  margin: 0;
 }
