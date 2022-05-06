@@ -18,11 +18,14 @@ export default class Bells extends React.Component {
         this.bellUpdate = setInterval(() => {
             // Update the bells
             document.getElementById("bell-schedule-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).schedule;
+            document.getElementById("cycle-header").style.color = StuyUtils.getDayInfo(new Date(), true).cycle;
+            document.getElementById("testing-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).testing;
+            document.getElementById("events-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).events;
             document.getElementById("current-class-header").innerHTML = StuyUtils.getCurrentClass(new Date()).period;
             document.getElementById("time-since").innerHTML = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301;
             document.getElementById("time-now").innerHTML = DateTime.format(new Date(), "MM/DD/YYYY hh:mm:ss A");
-            document.getElementById("next-class-header").innerHTML = StuyUtils.getNextClass(new Date()).period;
+            document.getElementById("next-class-header").innerHTML = StuyUtils.getNextClass(new Date(), true).period;
             // Get the progress bar
             let progBarPercentage1 = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             let progBarPercentage2 = /* Get time between start and end of current class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 1;
@@ -43,9 +46,23 @@ export default class Bells extends React.Component {
                 <center>
                     <h1>Bells</h1>
                     <div className="bells-container">
-                        <div className="b-bell-schedule">
-                            <p className="section-header">Current Bell Schedule</p>
-                            <p className="blue" id="bell-schedule-header">Loading...</p>
+                        <div className="b-day-info">
+                            <div className="b-bell-schedule">
+                                <p className="section-header">Current Bell Schedule</p>
+                                <p className="blue" id="bell-schedule-header">Loading...</p>
+                            </div>
+                            <div className="b-cycle">
+                                <p className="section-header">Cycle</p>
+                                <p className="blue" id="current-class-header">Loading...</p>
+                            </div>
+                            <div className="b-testing">
+                                <p className="section-header">Testing</p>
+                                <p className="blue" id="testing-header">Loading...</p>
+                            </div>
+                            <div className="b-events">
+                                <p className="section-header">Events</p>
+                                <p className="blue" id="events-header">Loading...</p>
+                            </div>
                         </div>
                         <div className="b-current-class">
                             <p className="section-header">Current Class</p>
