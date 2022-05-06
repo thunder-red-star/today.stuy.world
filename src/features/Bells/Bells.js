@@ -82,7 +82,7 @@ export default class Bells extends React.Component {
                         </div>
                         <div className="b-next-class float-clear">
                             <p className="section-header">Next Class</p>
-                            <p className="blue" id="next-class-header">Loading...</p>
+                            <p className="blue" id="next-class-header">N/A</p>
                         </div>
                         <div className="b-time-now float-clear" id="time-now">
                             Loading...

@@ -22,13 +22,21 @@ export default class BellPage extends React.Component {
             let startTime = bellSchedule[bellName]["start"];
             let endTime = bellSchedule[bellName]["end"];
             // Add the row to the table
-            document.getElementById("bellTableBody").innerHTML += `
-                <tr>
+            if (bellName === StuyUtils.getCurrentClass(new Date()).name) {
+                document.getElementById("bellTableBody").innerHTML += `<tr class="curr-class">
                     <td>${bellName}</td>
                     <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "hh:mm A")}</td>
                     <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "hh:mm A")}</td>
-                </tr>
-            `;
+                </tr>`;
+            } else {
+                document.getElementById("bellTableBody").innerHTML += `
+                    <tr>
+                        <td>${bellName}</td>
+                        <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "hh:mm A")}</td>
+                        <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "hh:mm A")}</td>
+                    </tr>
+                `;
+            }
         }
     }
 

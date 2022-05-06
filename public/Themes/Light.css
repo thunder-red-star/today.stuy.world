@@ -1009,3 +1009,7 @@ nav ul li p {
 .progress-bar-inner {
     background-color: #006600;
 }
+
+.curr-class {
+    color: #000099;
+}
