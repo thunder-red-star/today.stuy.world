@@ -1,4 +1,4 @@
-export default {
+let TimeUtils = {
 	minutesBetween(start, end) {
 		return Math.floor((start - end) / 60000);
 	},
@@ -17,3 +17,5 @@ export default {
 		return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()));
 	}
 }
+
+export default TimeUtils;

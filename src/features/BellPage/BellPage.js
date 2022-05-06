@@ -6,10 +6,6 @@ import ThemeSet from "../Theme/ThemeSet";
 import DateTime from "../../utils/DaT";
 import TimeUtils from "../../utils/TimeUtils";
 export default class BellPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         setInterval(() => {
             // Load the bell schedule from StuyUtils

@@ -1,7 +1,6 @@
 // Landing page for the application
 import React from 'react';
 import Navigation from "../Navigation/Navigation";
-import ThemeButton from "../Theme/ThemeButton";
 import ThemeSet from "../Theme/ThemeSet";
 
 export default class Announcements extends React.Component {

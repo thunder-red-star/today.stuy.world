@@ -1,21 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Sun from "./Icons/Sun";
-import Moon from "./Icons/Moon";
 
 let ThemeSetter = (props) => {
-	const [theme, setTheme] = useState(localStorage.getItem("theme"));
-	const [ stylePath, setStylePath ] = useState("./Themes/" + (theme == "light" ? "Light" : "Dark")  + ".css");
-
-	const handleStylePath = () => {
-		if (theme == "light") {
-			setStylePath("./Themes/Dark.css");
-		} else if (theme == "dark") {
-			setStylePath("./Themes/Light.css");
-		} else {
-			setStylePath("./Themes/Light.css");
-		}
-	}
+	const [theme] = useState(localStorage.getItem("theme"));
+	const [ stylePath ] = useState("./Themes/" + (theme === "light" ? "Light" : "Dark")  + ".css");
 
 	useEffect(() => {
 		var head = document.head;
@@ -32,7 +20,7 @@ let ThemeSetter = (props) => {
 	}, [theme, stylePath]);
 
 	return (
-		<empty></empty>
+		<div></div>
 	);
 }
 
