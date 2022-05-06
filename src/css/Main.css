@@ -37,15 +37,30 @@ html * {
   text-align: right;
 }
 
-.float-left {
-  float: left;
+@media (max-width: 767px) {
+  .float-left {
+    text-align: center;
+  }
+
+  .float-right {
+    text-align: center;
+  }
+  .float-clear {
+    text-align: center;
+  }
 }
 
-.float-right {
-  float: right;
-}
-.float-clear {
-  clear: both;
+@media (min-width: 768px) {
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+  .float-clear {
+    clear: both;
+  }
 }
 
 @media (max-width: 300px) {
