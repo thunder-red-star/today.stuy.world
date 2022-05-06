@@ -11,7 +11,7 @@ export default class Settings extends React.Component {
                 <Navigation />
                 <h1>Settings</h1>
                 <p>
-                    Here you can mess around with the settings of the application.
+                    Here you can mess around with the settings of the application. Please keep in mind that editing settings will store keys in local storage (i.e. cookies, but without an expiration date).
                 </p>
                 <h2>Theme</h2>
                 <ThemeButton />
