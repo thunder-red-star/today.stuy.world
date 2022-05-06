@@ -11,33 +11,35 @@ export default class BellPage extends React.Component {
     }
 
     componentDidMount() {
-        // Load the bell schedule from StuyUtils
-        // Create a new empty table
-        document.getElementById("bellTableBody").innerHTML = "";
+        setInterval(() => {
+            // Load the bell schedule from StuyUtils
+            // Create a new empty table
+            document.getElementById("bellTableBody").innerHTML = "";
 
-        let bellSchedule = StuyUtils.getBellSchedule(new Date());
-        // For each bell, add a new row to the table
-        for (let i = 0; i < Object.keys(bellSchedule).length; i++) {
-            let bellName = Object.keys(bellSchedule)[i];
-            let startTime = bellSchedule[bellName]["start"];
-            let endTime = bellSchedule[bellName]["end"];
-            // Add the row to the table
-            if (bellName === StuyUtils.getCurrentClass(new Date()).name) {
-                document.getElementById("bellTableBody").innerHTML += `<tr class="curr-class">
+            let bellSchedule = StuyUtils.getBellSchedule(new Date());
+            // For each bell, add a new row to the table
+            for (let i = 0; i < Object.keys(bellSchedule).length; i++) {
+                let bellName = Object.keys(bellSchedule)[i];
+                let startTime = bellSchedule[bellName]["start"];
+                let endTime = bellSchedule[bellName]["end"];
+                // Add the row to the table
+                if (bellName === StuyUtils.getCurrentClass(new Date()).period) {
+                    document.getElementById("bellTableBody").innerHTML += `<tr class="curr-class">
                     <td>${bellName}</td>
                     <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "hh:mm A")}</td>
                     <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "hh:mm A")}</td>
                 </tr>`;
-            } else {
-                document.getElementById("bellTableBody").innerHTML += `
+                } else {
+                    document.getElementById("bellTableBody").innerHTML += `
                     <tr>
                         <td>${bellName}</td>
                         <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "hh:mm A")}</td>
                         <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "hh:mm A")}</td>
                     </tr>
                 `;
+                }
             }
-        }
+        }, 1000);
     }
 
     render() {

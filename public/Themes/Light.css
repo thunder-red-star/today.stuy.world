@@ -1011,5 +1011,5 @@ nav ul li p {
 }
 
 .curr-class {
-    color: #000099;
+    color: #000099 !important;
 }
