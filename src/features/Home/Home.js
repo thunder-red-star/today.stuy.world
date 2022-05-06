@@ -10,6 +10,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div id="underline">
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <Navigation />
                 <ThemeSet />
                 <h1>

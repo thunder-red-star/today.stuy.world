@@ -7,6 +7,7 @@ export default class Credits extends React.Component {
     render() {
         return (
             <div className="container" id="underline">
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <ThemeSet />
                 <Navigation />
                 <h1>Credits</h1>
