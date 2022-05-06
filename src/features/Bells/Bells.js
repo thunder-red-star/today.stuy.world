@@ -17,10 +17,10 @@ export default class Bells extends React.Component {
     componentDidMount() {
         this.bellUpdate = setInterval(() => {
             // Update the bells
-            document.getElementById("bell-schedule-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).schedule;
-            document.getElementById("cycle-header").style.color = StuyUtils.getDayInfo(new Date(), true).cycle;
-            document.getElementById("testing-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).testing;
-            document.getElementById("events-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).events;
+            document.getElementById("bell-schedule-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).schedule || "N/A";
+            document.getElementById("cycle-header").style.color = StuyUtils.getDayInfo(new Date(), true).cycle || "N/A";
+            document.getElementById("testing-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).testing || "None";
+            document.getElementById("events-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).events || "None";
             document.getElementById("current-class-header").innerHTML = StuyUtils.getCurrentClass(new Date()).period;
             document.getElementById("time-since").innerHTML = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301;
@@ -47,21 +47,25 @@ export default class Bells extends React.Component {
                     <h1>Bells</h1>
                     <div className="bells-container">
                         <div className="b-day-info">
-                            <div className="b-bell-schedule float-left">
-                                <p className="section-header">Current Bell Schedule</p>
-                                <p className="mini-blue" id="bell-schedule-header">Loading...</p>
+                            <div class="float-clear">
+                                <div className="b-bell-schedule float-left">
+                                    <p className="section-header">Current Bell Schedule</p>
+                                    <p className="mini-blue" id="bell-schedule-header">Loading...</p>
+                                </div>
+                                <div className="b-cycle">
+                                    <p className="section-header float-right">Cycle</p>
+                                    <p className="mini-blue" id="cycle-header">Loading...</p>
+                                </div>
                             </div>
-                            <div className="b-cycle">
-                                <p className="section-header float-right">Cycle</p>
-                                <p className="mini-blue" id="cycle-header">Loading...</p>
-                            </div>
-                            <div className="b-testing">
-                                <p className="section-header float-left">Testing</p>
-                                <p className="mini-blue" id="testing-header">Loading...</p>
-                            </div>
-                            <div className="b-events">
-                                <p className="section-header float-right">Events</p>
-                                <p className="mini-blue" id="events-header">Loading...</p>
+                            <div class="float-clear">
+                                <div className="b-testing">
+                                    <p className="section-header float-left">Testing</p>
+                                    <p className="mini-blue" id="testing-header">Loading...</p>
+                                </div>
+                                <div className="b-events">
+                                    <p className="section-header float-right">Events</p>
+                                    <p className="mini-blue" id="events-header">Loading...</p>
+                                </div>
                             </div>
                         </div>
                         <div className="b-current-class float-clear">
