@@ -22,6 +22,8 @@ export default class Bells extends React.Component {
             document.getElementById("time-since").innerHTML = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301;
             document.getElementById("time-now").innerHTML = DateTime.format(new Date(), "MM/DD/YYYY hh:mm:ss A");
+            // Get the progress bar
+            let progress = document.getElementById("progress-bar");
         }, 1000);
     }
     componentWillUnmount() {
@@ -63,7 +65,7 @@ export default class Bells extends React.Component {
                             </div>
                         </div>
                         <div className="b-progress-bar-container float-clear">
-                            <ProgressBar></ProgressBar>
+                            <ProgressBar width="100" max="1" progress="0" height="10"></ProgressBar>
                         </div>
                         <div className="b-time-now" id="time-now">
                             Loading...

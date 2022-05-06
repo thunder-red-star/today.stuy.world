@@ -8,6 +8,8 @@ export default class ProgressBar extends React.Component {
 	  progress: this.props.progress,
 	  max: this.props.max,
 		color: this.props.color,
+		width: this.props.width,
+		height: this.props.height,
 	}
   }
 
@@ -15,16 +17,20 @@ export default class ProgressBar extends React.Component {
 	this.setState({
 	  progress: nextProps.progress,
 	  max: nextProps.max,
-		color: nextProps.color,
+		width: nextProps.width,
+		height: nextProps.height,
 	});
   }
 
   render() {
 	return (
-	  <div className="progress-bar">
-		<div className="progress-bar-inner" style={{
+	  <div id="progress-bar" className="progress-bar" style={{
+		width: `${this.state.width}%`,
+		height: `${this.state.height}px`,
+	  }}>
+		<div id={}"progress-bar-inner" className="progress-bar-inner" style={{
 		  width: this.state.progress + '%',
-		  backgroundColor: this.state.color,
+			height: `100%`,
 		}}></div>
 	  </div>
 	);
