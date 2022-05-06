@@ -53,7 +53,7 @@ export default class Bells extends React.Component {
                             </div>
                             <div className="b-cycle">
                                 <p className="section-header">Cycle</p>
-                                <p className="blue" id="current-class-header">Loading...</p>
+                                <p className="blue" id="cycle-header">Loading...</p>
                             </div>
                             <div className="b-testing">
                                 <p className="section-header">Testing</p>
