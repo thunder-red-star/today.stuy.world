@@ -24,7 +24,7 @@ export default class Bells extends React.Component {
             document.getElementById("time-now").innerHTML = DateTime.format(new Date(), "MM/DD/YYYY hh:mm:ss A");
             // Get the progress bar
             console.log("Trying to update progress bar to " + ((TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) + 301) / TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end))) * 100 + "%")
-            document.getElementById("progress-bar-inner").style.width = ((TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) + 301) / TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end))) * 100 + "%";
+            document.getElementById("progress-bar-inner").style.width = ((TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300) / TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end))) * 100 + "%";
         }, 1000);
     }
     componentWillUnmount() {
