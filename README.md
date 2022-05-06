@@ -11,7 +11,7 @@ The third attempt to create something like Today.stuysu.org. Now with webpacked 
 - [x] Bells page
 - [x] Schedule page
 - [ ] Announcements page
-- [?] Credits page
+- [ ] Credits page
 - [ ] Events page
 - [ ] More configurability
 - [ ] Links page
