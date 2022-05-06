@@ -12,12 +12,7 @@ export default class Credits extends React.Component {
                 <Navigation />
                 <h1>Credits</h1>
                 <p>
-                    This is the credits page.
-                    Credits are given to:
-                    <ul>
-                        <li>Icons8 (even though I have a premium plan)</li>
-                        <li>Water.css (base CSS framework)</li>
-                    </ul>
+                    This is the credits page, which will be fully completed in the future.
                 </p>
             </div>
         );
