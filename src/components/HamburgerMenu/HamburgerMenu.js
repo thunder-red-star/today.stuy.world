@@ -25,7 +25,7 @@ export default class HamburgerMenu extends React.Component {
       }
     }
 
-    render() {
+  render() {
     const { children } = this.props;
     return (
       <div>
