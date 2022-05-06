@@ -26,15 +26,15 @@ export default class BellPage extends React.Component {
                 if (bellName === StuyUtils.getCurrentClass(new Date()).period) {
                     document.getElementById("bellTableBody").innerHTML += `<tr class="curr-class">
                     <td>${bellName}</td>
-                    <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "hh:mm A")}</td>
-                    <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "hh:mm A")}</td>
+                    <td>${DateTime.format(DateTime.addHours(startTime, startTime.getTimezoneOffset() / 60), "hh:mm A")}</td>
+                    <td>${DateTime.format(DateTime.addHours(endTime, endTime.getTimezoneOffset() / 60), "hh:mm A")}</td>
                 </tr>`;
                 } else {
                     document.getElementById("bellTableBody").innerHTML += `
                     <tr>
                         <td>${bellName}</td>
-                        <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, 5)), "hh:mm A")}</td>
-                        <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, 5)), "hh:mm A")}</td>
+                        <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(startTime, startTime.getTimezoneOffset() / 60)), "hh:mm A")}</td>
+                        <td>${DateTime.format(TimeUtils.UTCify(DateTime.addHours(endTime, endTime.getTimezoneOffset() / 60)), "hh:mm A")}</td>
                     </tr>
                 `;
                 }
@@ -59,6 +59,7 @@ export default class BellPage extends React.Component {
                         </tr>
                         </thead>
                         <tbody id="bellTableBody">
+                            <img src="./Img/output-onlinegiftools.gif" alt="Loading..." />
                         </tbody>
                     </table>
                 </div>

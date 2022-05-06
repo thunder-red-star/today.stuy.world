@@ -21,13 +21,13 @@ export default class Bells extends React.Component {
             document.getElementById("bell-schedule-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).schedule || "N/A";
             document.getElementById("cycle-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).cycle || "N/A";
             document.getElementById("current-class-header").innerHTML = StuyUtils.getCurrentClass(new Date()).period;
-            document.getElementById("time-since").innerHTML = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
-            document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301;
+            document.getElementById("time-since").innerHTML = TimeUtils.minutesBetween(new Date(), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(new Date()).start)) - 300;
+            document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(new Date()).end), new Date()) + 301;
             document.getElementById("time-now").innerHTML = DateTime.format(new Date(), "MM/DD/YYYY hh:mm:ss A");
             document.getElementById("next-class-header").innerHTML = StuyUtils.getNextClass(new Date(), true).period;
             // Get the progress bar
-            let progBarPercentage1 = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
-            let progBarPercentage2 = /* Get time between start and end of current class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 1;
+            let progBarPercentage1 = TimeUtils.minutesBetween(new Date(), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(new Date()).start)) - 300;
+            let progBarPercentage2 = /* Get time between start and end of current class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(new Date()).end), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(new Date()).start)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(new Date()).start), TimeUtils.epochToCurrent(StuyUtils.getNextClass(new Date()).end)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(new Date()).end), new Date()) + 1;
             let progBarPercentage = (1 + (progBarPercentage1 / progBarPercentage2)) * 100;
             console.log("Trying to update progress bar to " + progBarPercentage);
             // document.getElementById("progress-bar-inner").style.width = progBarPercentage + "%";
