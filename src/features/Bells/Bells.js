@@ -52,8 +52,8 @@ export default class Bells extends React.Component {
                                     <p className="section-header">Current Bell Schedule</p>
                                     <p className="mini-blue" id="bell-schedule-header">Loading...</p>
                                 </div>
-                                <div className="b-cycle">
-                                    <p className="section-header float-right">Cycle</p>
+                                <div className="b-cycle float-right">
+                                    <p className="section-header">Cycle</p>
                                     <p className="mini-blue" id="cycle-header">Loading...</p>
                                 </div>
                             </div>
