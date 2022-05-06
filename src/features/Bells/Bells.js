@@ -18,7 +18,7 @@ export default class Bells extends React.Component {
         this.bellUpdate = setInterval(() => {
             // Update the bells
             document.getElementById("bell-schedule-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).schedule || "N/A";
-            document.getElementById("cycle-header").style.color = StuyUtils.getDayInfo(new Date(), true).cycle || "N/A";
+            document.getElementById("cycle-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).cycle || "N/A";
             document.getElementById("testing-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).testing || "None";
             document.getElementById("events-header").innerHTML = StuyUtils.getDayInfo(new Date(), true).events || "None";
             document.getElementById("current-class-header").innerHTML = StuyUtils.getCurrentClass(new Date()).period;
@@ -31,7 +31,7 @@ export default class Bells extends React.Component {
             let progBarPercentage2 = /* Get time between start and end of current class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 1;
             let progBarPercentage = (1 + (progBarPercentage1 / progBarPercentage2)) * 100;
             console.log("Trying to update progress bar to " + progBarPercentage);
-            document.getElementById("progress-bar-inner").style.width = progBarPercentage + "%";
+            // document.getElementById("progress-bar-inner").style.width = progBarPercentage + "%";
         }, 1000);
     }
     componentWillUnmount() {
