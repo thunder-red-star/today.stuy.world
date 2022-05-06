@@ -11,8 +11,8 @@ export default class Navigation extends React.Component {
                 <li><Link key="home" to="/home">Home</Link></li>
                 <li><Link key="bells" to="/bells">Bells</Link></li>
                 <li><Link key="announcements" to="/announcements">Announcements</Link></li>
-                <li><Link key="links" to="/links">Contact</Link></li>
-                <li><Link key="credits" to="/credits">Login</Link></li>
+                <li><Link key="links" to="/links">Links</Link></li>
+                <li><Link key="credits" to="/credits">Credits</Link></li>
                 <li><Link key="settings" to="/settings">Settings</Link></li>
             </ul>
         </HamburgerMenu>
