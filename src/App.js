@@ -10,6 +10,7 @@ import Announcements from "./features/Announcements/Announcements";
 import Links from "./features/Links/Links";
 import Credits from "./features/Credits/Credits";
 import Settings from "./features/Settings/Settings";
+import Schedule from "./features/BellPage/BellPage";
 
 import './css/Underline.css';
 import './css/Center.css';
@@ -54,6 +55,7 @@ function App() {
             <Route path="/links" exact element={<Links />} />
             <Route path="/credits" exact element={<Credits />} />
             <Route path="/settings" exact element={<Settings />} />
+          <Route path="/schedule" element={<Schedule />} />
         </Routes>
       </div>
     </BrowserRouter>
