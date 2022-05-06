@@ -57,6 +57,7 @@ html * {
     padding: 0;
     margin-block: 0;
     margin-inline: 0;
+    align: center !important;
   }
 }
 
@@ -69,6 +70,7 @@ html * {
     padding: 0;
     margin-block: 0;
     margin-inline: 0;
+    align: center !important;
   }
 }
 
