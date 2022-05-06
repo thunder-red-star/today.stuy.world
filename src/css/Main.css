@@ -104,7 +104,7 @@ html * {
 @media (min-width: 1401px) {
   .big-time-since,
   .big-time-till {
-    font-size: 1500%;
+    font-size: 1200%;
     font-weight: bold;
     margin: 0;
     padding: 0;
