@@ -47,7 +47,7 @@ export default class Bells extends React.Component {
                         <div className="b-time-since-till-container">
                             <div className="b-time-since float-left">
                                 <p className="big-time-since right-align" id="time-since">
-                                    <img src="./Img/icons8-loading-circle.gif" alt="Loading..." />
+                                    <img src="./Img/output-onlinegiftools.gif" alt="Loading..." />
                                 </p>
                                 <p className="small-time-since right-align">
                                     Minutes since period start
@@ -55,7 +55,7 @@ export default class Bells extends React.Component {
                             </div>
                             <div className="b-time-till float-right">
                                 <p className="big-time-till left-align" id="time-till">
-                                    <img src="./Img/icons8-loading-circle.gif" alt="Loading..." />
+                                    <img src="./Img/output-onlinegiftools.gif" alt="Loading..." />
                                 </p>
                                 <p className="small-time-till left-align">
                                     Minutes until period end
