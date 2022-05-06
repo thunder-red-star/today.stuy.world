@@ -65,7 +65,7 @@ export default class Bells extends React.Component {
                             </div>
                         </div>
                         <div className="b-progress-bar-container float-clear">
-                            <ProgressBar width="100" max="1" progress="0" height="10"></ProgressBar>
+                            <ProgressBar width="100" max="1" progress="0.5" height="10"></ProgressBar>
                         </div>
                         <div className="b-time-now" id="time-now">
                             Loading...
