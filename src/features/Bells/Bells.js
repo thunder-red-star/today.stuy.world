@@ -22,6 +22,7 @@ export default class Bells extends React.Component {
             document.getElementById("time-since").innerHTML = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301;
             document.getElementById("time-now").innerHTML = DateTime.format(new Date(), "MM/DD/YYYY hh:mm:ss A");
+            document.getElementById("next-class-header").innerHTML = StuyUtils.getNextClass(new Date()).period;
             // Get the progress bar
             let progBarPercentage1 = TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) - 300;
             let progBarPercentage2 = /* Get time between start and end of current class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end)) + /* Get time between start and end of next class */ TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getNextClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 1;
@@ -67,6 +68,10 @@ export default class Bells extends React.Component {
                                     Minutes until period end
                                 </p>
                             </div>
+                        </div>
+                        <div className="b-next-class float-clear">
+                            <p className="section-header">Next Class</p>
+                            <p className="blue" id="next-class-header">Loading...</p>
                         </div>
                         <div className="b-time-now float-clear" id="time-now">
                             Loading...
