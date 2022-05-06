@@ -23,10 +23,11 @@ export default class Bells extends React.Component {
             document.getElementById("time-till").innerHTML = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end), TimeUtils.UTCify(new Date())) + 301;
             document.getElementById("time-now").innerHTML = DateTime.format(new Date(), "MM/DD/YYYY hh:mm:ss A");
             // Get the progress bar
-            let progress = document.getElementById("progress-bar-inner");
-            // Set width
-            progress.style.max = StuyUtils.getCurrentClass(new Date()).end - StuyUtils.getCurrentClass(new Date()).start;
-            progress.style.width = TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start), TimeUtils.UTCify(new Date())) + 301;
+            let progress = document.getElementById("progress-bar");
+
+            let progressInner = document.getElementById("progress-bar-inner");
+            // Set width to current time since start divided by total time
+            progressInner.style.width = (TimeUtils.minutesBetween(TimeUtils.UTCify(new Date()), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start)) / TimeUtils.minutesBetween(TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).start), TimeUtils.epochToCurrent(StuyUtils.getCurrentClass(TimeUtils.UTCify(new Date())).end))) * 100 + "%";
         }, 1000);
     }
     componentWillUnmount() {
