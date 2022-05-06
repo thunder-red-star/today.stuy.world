@@ -68,7 +68,7 @@ export default class Bells extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <div className="b-time-now" id="time-now">
+                        <div className="b-time-now float-clear" id="time-now">
                             Loading...
                         </div>
                     </div>
