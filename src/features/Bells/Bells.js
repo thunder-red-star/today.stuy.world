@@ -59,11 +59,11 @@ export default class Bells extends React.Component {
                             </div>
                             <div class="float-clear">
                                 <div className="b-testing">
-                                    <p className="section-header float-left">Testing</p>
+                                    <p className="section-header">Testing</p>
                                     <p className="mini-blue" id="testing-header">Loading...</p>
                                 </div>
                                 <div className="b-events">
-                                    <p className="section-header float-right">Events</p>
+                                    <p className="section-header">Events</p>
                                     <p className="mini-blue" id="events-header">Loading...</p>
                                 </div>
                             </div>
