@@ -33,41 +33,43 @@ export default class Bells extends React.Component {
             <div className="container">
                 <Navigation />
                 <ThemeSet />
-                <h1>Bells</h1>
-                <div className="bells-container">
-                    <div className="b-bell-schedule">
-                        <p>Current Bell Schedule</p>
-                        <p className="blue" id="bell-schedule-header">Loading...</p>
-                    </div>
-                    <div className="b-current-class">
-                        <p>Current Class</p>
-                        <p className="blue" id="current-class-header">Loading...</p>
-                    </div>
-                    <div className="b-time-since-till-container">
-                        <div className="b-time-since">
-                            <p className="big-time-since right-align" id="time-since">
-                                Loading...
-                            </p>
-                            <p className="small-time-since right-align">
-                                Minutes since period start
-                            </p>
+                <center>
+                    <h1>Bells</h1>
+                    <div className="bells-container">
+                        <div className="b-bell-schedule">
+                            <p className="section-header">Current Bell Schedule</p>
+                            <p className="blue" id="bell-schedule-header">Loading...</p>
                         </div>
-                        <div className="b-time-till">
-                            <p className="big-time-till left-align" id="time-till">
-                                Loading...
-                            </p>
-                            <p className="small-time-till left-align">
-                                Minutes until period end
-                            </p>
+                        <div className="b-current-class">
+                            <p className="section-header">Current Class</p>
+                            <p className="blue" id="current-class-header">Loading...</p>
+                        </div>
+                        <div className="b-time-since-till-container">
+                            <div className="b-time-since">
+                                <p className="big-time-since right-align" id="time-since">
+                                    Loading...
+                                </p>
+                                <p className="small-time-since right-align">
+                                    Minutes since period start
+                                </p>
+                            </div>
+                            <div className="b-time-till">
+                                <p className="big-time-till left-align" id="time-till">
+                                    Loading...
+                                </p>
+                                <p className="small-time-till left-align">
+                                    Minutes until period end
+                                </p>
+                            </div>
+                        </div>
+                        <div className="b-progress-bar-container">
+                            <ProgressBar></ProgressBar>
+                        </div>
+                        <div className="b-time-now" id="time-now">
+                            Loading...
                         </div>
                     </div>
-                    <div className="b-progress-bar-container">
-                        <ProgressBar></ProgressBar>
-                    </div>
-                    <div className="b-time-now" id="time-now">
-                        Loading...
-                    </div>
-                </div>
+                </center>
             </div>
         );
     }

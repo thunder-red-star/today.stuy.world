@@ -470,7 +470,6 @@ function getDayInfo (date) {
 	 * @param date: Date
 	 * @returns Info
 	 */
-	console.log(DateTime.format(date, "YYYY-MM-DD"));
 	let dayInfo = termDays[DateTime.format(date, "YYYY-MM-DD")];
 
 	if (dayInfo === undefined) {
