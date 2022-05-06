@@ -129,3 +129,7 @@ html * {
     margin: 0;
   }
 }
+
+.button {
+  margin: 15px;
+}
