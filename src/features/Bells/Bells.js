@@ -47,21 +47,21 @@ export default class Bells extends React.Component {
                     <h1>Bells</h1>
                     <div className="bells-container">
                         <div className="b-day-info">
-                            <div className="b-bell-schedule">
+                            <div className="b-bell-schedule float-left">
                                 <p className="section-header">Current Bell Schedule</p>
-                                <p className="blue" id="bell-schedule-header">Loading...</p>
+                                <p className="mini-blue" id="bell-schedule-header">Loading...</p>
                             </div>
                             <div className="b-cycle">
-                                <p className="section-header">Cycle</p>
-                                <p className="blue" id="cycle-header">Loading...</p>
+                                <p className="section-header float-right">Cycle</p>
+                                <p className="mini-blue" id="cycle-header">Loading...</p>
                             </div>
                             <div className="b-testing">
-                                <p className="section-header">Testing</p>
-                                <p className="blue" id="testing-header">Loading...</p>
+                                <p className="section-header float-left">Testing</p>
+                                <p className="mini-blue" id="testing-header">Loading...</p>
                             </div>
                             <div className="b-events">
-                                <p className="section-header">Events</p>
-                                <p className="blue" id="events-header">Loading...</p>
+                                <p className="section-header float-right">Events</p>
+                                <p className="mini-blue" id="events-header">Loading...</p>
                             </div>
                         </div>
                         <div className="b-current-class">
