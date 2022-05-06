@@ -4,6 +4,7 @@ import StuyUtils from "../../utils/StuyUtils";
 import Navigation from "../Navigation/Navigation";
 import ThemeSet from "../Theme/ThemeSet";
 import DateTime from "../../utils/DaT";
+import TimeUtils from "../../utils/TimeUtils";
 export default class BellPage extends React.Component {
     constructor(props) {
         super(props);
@@ -24,8 +25,8 @@ export default class BellPage extends React.Component {
             document.getElementById("bellTableBody").innerHTML += `
                 <tr>
                     <td>${bellName}</td>
-                    <td>${DateTime.format(startTime, "HH:mm A")}</td>
-                    <td>${DateTime.format(endTime, "HH:mm A")}</td>
+                    <td>${DateTime.format(TimeUtils.UTCify(startTime), "HH:mm A")}</td>
+                    <td>${DateTime.format(TimeUtils.UTCify(endTime), "HH:mm A")}</td>
                 </tr>
             `;
         }
