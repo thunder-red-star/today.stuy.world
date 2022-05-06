@@ -1,7 +1,7 @@
 /* Stylesheet for link underlining. */
 
 #underline a:hover{
-    position: absolute;
+    position: relative;
     text-decoration: none !important;
     color: inherit;
 }
@@ -9,7 +9,7 @@
 #underline a::before{
     text-decoration: none !important;
     content: '';
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
     width: 0;
