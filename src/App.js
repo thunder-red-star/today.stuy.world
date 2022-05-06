@@ -1,7 +1,5 @@
 import './css/Main.css';
 import './css/Fonts.css';
-import './features/Theme/auto.css';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Main app, import main view and hamburger menu
@@ -13,8 +11,38 @@ import Links from "./features/Links/Links";
 import Credits from "./features/Credits/Credits";
 import Settings from "./features/Settings/Settings";
 
+import {useState} from "react";
+import {useEffect} from "react";
+
 // Don't forget to call renderImportAttributes
 function App() {
+  /*
+  const [ stylePath, setStylePath ] = useState("./Themes/Light.css");
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+
+  useEffect(() => {
+    var head = document.head;
+    var link = document.createElement("link");
+
+    if (theme == "light") {
+      setStylePath("./Themes/Light.css");
+    } else if (theme == "dark") {
+      setStylePath("./Themes/Dark.css");
+    } else {
+      setStylePath("./Themes/Light.css");
+    }
+
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.href = stylePath;
+
+    head.appendChild(link);
+
+    return () => { head.removeChild(link); }
+
+  }, [theme, stylePath]);
+  */
+
   return (
     <BrowserRouter>
       <div className="App">

@@ -1,6 +1,5 @@
 // Hamburger menu, meant to contain a list of links <a>
 import React from 'react';
-import './HamburgerMenu.css';
 // Navigation contains a UL of LI elements with links inside, so when page is rendered, convert the array of links to a list of links
 
 export default class HamburgerMenu extends React.Component {

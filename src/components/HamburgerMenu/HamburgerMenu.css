@@ -23,6 +23,7 @@
     transition: all 0.2s ease-in-out;
     background-color: #202b38;
     opacity: 0.9;
+    color: white;
   }
 
   nav:before {
@@ -126,6 +127,7 @@
     transition: all 0.2s ease-in-out;
     background-color: #ffffff;
     opacity: 0.9;
+    color: black;
   }
 
   nav:before {
